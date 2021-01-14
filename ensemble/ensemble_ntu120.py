@@ -21,7 +21,7 @@ arg = parser.parse_args()
 protocol = arg.protocols
 alpha = arg.alpha
 
-label = open('/media/bruce/2Tssd/data/ntu120/' + protocol + '/val_label.pkl', 'rb')
+label = open('./data/ntu120/' + protocol + '/val_label.pkl', 'rb')
 label = np.array(pickle.load(label))
 
 r1_2s = open('./results/ntu120/' + protocol + '/joint_result_2sagcn.pkl', 'rb')

@@ -7,7 +7,7 @@ from tqdm import tqdm
 import shutil
 # python ensemble.py` --datasets ntu/xprotocol
 parser = argparse.ArgumentParser()
-parser.add_argument('--datasets', default='NWestern_UCLA', choices={'NWestern_UCLA'},
+parser.add_argument('--datasets', default='nucla', choices={'nucla'},
                     help='the work folder for storing results')
 parser.add_argument('--alpha', default=1, help='weighted summation')
 arg = parser.parse_args()
@@ -16,7 +16,8 @@ dataset = arg.datasets
 if_save_for_mmnet = False
 
 for protocol in protocols:
-    label = open('../../data/' + dataset + '/' + protocol + '/val_label.pkl', 'rb')
+    #label = open('../../data/' + dataset + '/' + protocol + '/val_label.pkl', 'rb')
+    label = open('./data/' + dataset + '/' + protocol + '/val_label.pkl', 'rb')
     label = np.array(pickle.load(label))
 
     #r1 = open('../../data/st-gcn/ucla/rgb_only/'+protocol+model+'/best_result.pkl', 'rb')

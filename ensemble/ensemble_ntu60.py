@@ -21,10 +21,10 @@ arg = parser.parse_args()
 protocol = arg.protocols
 alpha = arg.alpha
 
-label = open('/media/bruce/2Tssd/data/ntu-rgbd-st-gcn/' + protocol + '/val_label.pkl', 'rb')
+label = open('./data/ntu_st_gcn/' + protocol + '/val_label.pkl', 'rb')
 label = np.array(pickle.load(label))
 
-label_g3d = open('/media/bruce/2Tssd/data/ntu/' + protocol + '/val_label.pkl', 'rb')
+label_g3d = open('./data/ntu/' + protocol + '/val_label.pkl', 'rb')
 label_g3d = np.array(pickle.load(label_g3d))
 
 r1_gcn = open('./results/ntu60/' + protocol + '/joint_result_stgcn.pkl', 'rb')

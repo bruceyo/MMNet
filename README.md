@@ -45,7 +45,7 @@ python tools/ntu60_gendata.py --data_path <path to nturgbd+d_skeletons>
 ```
 where the ```<path to nturgbd+d_skeletons>``` points to the 3D skeletons modality of NTU RGB+D dataset you download.
 
-For evaluation, the processed data includes: ```val_data and val_label``` are available from [GoogleDrive](https://drive.google.com/drive/folders/1D7zXKuk4YF4vGczrkMv87lapdMlwEy_S?usp=sharing). Please manually put it in folder: ```./data/NTU_RGBD```
+Since the processed data is quite large (around 40.7G in total), we do not provide it here.
 
 #### NTU RGB+D 120
 NTU RGB+D 120 can be downloaded from [their website](http://rose1.ntu.edu.sg/datasets/actionrecognition.asp).
@@ -55,7 +55,7 @@ python tools/ntu120_gendata.py --data_path <path to nturgbd+d_skeletons>
 ```
 where the ```<path to nturgbd+d_skeletons>``` points to the 3D skeletons modality of NTU RGB+D dataset you download.
 
-For evaluation, the processed data includes: ```val_data and val_label``` are available from [GoogleDrive](https://drive.google.com/drive/folders/1D7zXKuk4YF4vGczrkMv87lapdMlwEy_S?usp=sharing). Please manually put it in folder: ```./data/NTU_RGBD```
+Since the processed data is quite large (around 82G in total), we do not provide it here.
 
 #### PKU-MMD
 The dataset can be found in [PKU-MMD](https://github.com/ECHO960/PKU-MMD). PKU-MMD is a large action recognition dataset that contains 1076 long video sequences in 51 action categories, performed by 66 subjects in three camera views. It contains almost 20,000 action instances and 5.4 million frames in total. We transfer the 3D skeleton modality to seperate action repetition files with the command:
@@ -101,8 +101,9 @@ The processed ROI of PKU-MMD is available from [GoogleDrive](https://drive.googl
 ## Testing Pretrained Models
 <!-- ### Evaluation
 Once datasets and the pretrained models are ready, we can start the evaluation. -->
-You may downliad the trained models reported in the paper via [GoogleDrive]() and put them in folder ```models```.
-And also downliad the results reported in the paper via [GoogleDrive]() and put them in folder ```results```.
+You may downliad the trained models reported in the paper via [GoogleDrive](https://drive.google.com/drive/folders/1DS_B7hj2QFLoI2l3--K-cRMX9YyTbIfu?usp=sharing) and put them in folder ```models```.
+And also downliad the results reported in the paper via [GoogleDrive](https://drive.google.com/drive/folders/1_4T4XhCGu7qVx8EqIcXhSAm-y2lr5F14?usp=sharing) and put them in folder ```results```.
+
 
 ### Evaluate on NTU RGB+D 60
 For evaluation in **NTU RGB+D 60**, run
