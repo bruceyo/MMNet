@@ -1,0 +1,40 @@
+# python main_rgb.py recognition -c config/st_gcn/ntu-xview/train_rgb.yaml
+#weights: ../../data/st-gcn/with-rgb/full_rgb_only/xview_reg/epoch80_model.pt
+work_dir: ../../data/st-gcn/with-rgb/xview/rgb_only_1
+
+# feeder
+feeder: feeder.feeder_ntu_rgb.Feeder
+train_feeder_args:
+  random_move: False
+  random_flip: False
+  random_interval: True
+  data_path: /media/bruce/2Tssd/data/ntu-rgbd-st-gcn/xview/train_data.npy
+  label_path: /media/bruce/2Tssd/data/ntu-rgbd-st-gcn/xview/train_label.pkl
+test_feeder_args:
+  debug: False
+  evaluation: True
+  data_path: /media/bruce/2Tssd/data/ntu-rgbd-st-gcn/xview/val_data.npy
+  label_path: /media/bruce/2Tssd/data/ntu-rgbd-st-gcn/xview/val_label.pkl
+
+# model
+model: net.cnn.Model
+model_args:
+  in_channels: 3
+  num_class: 60
+  dropout: 0.5
+  edge_importance_weighting: True
+  graph_args:
+    layout: 'ntu-rgb+d'
+    strategy: 'spatial'
+
+#optim
+weight_decay: 0.0001
+base_lr: 0.1
+step: [10, 50]
+#eval_interval: 1
+
+# training
+device: [0,1,2,3]
+batch_size: 64
+test_batch_size: 64
+num_epoch: 80

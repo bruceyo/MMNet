@@ -1,0 +1,30 @@
+# python main_rgb.py recognition -c config/st_gcn/ntu-123/train_rgb_test.yaml
+#weights: ../../data/st-gcn/with-rgb/full_rgb_only/123_reg/epoch80_model.pt
+work_dir: ../../data/st-gcn_nucla/123/with_rgb/rgb_only_
+weights: ../../data/st-gcn_nucla/123/with_rgb/rgb_tp15_tf5_/epoch65_model.pt
+
+# feeder
+feeder: feeder.feeder_rgb_fused_nucla.Feeder
+
+test_feeder_args:
+  centralization: False
+  temporal_rgb_frames: 5
+  data_path: ../../data/NWestern_UCLA/123/val_data_joint.npy
+  label_path: ../../data/NWestern_UCLA/123/val_label.pkl
+
+# model
+model: net.cnn.Model
+model_args:
+  in_channels: 3
+  num_class: 10
+  edge_importance_weighting: True
+  graph_args:
+    layout: 'ucla'
+    strategy: 'spatial'
+
+# training
+phase: test
+device: [0,1,2,3]
+test_batch_size: 64
+# save
+save_result: True

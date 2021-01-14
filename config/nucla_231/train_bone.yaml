@@ -1,0 +1,41 @@
+
+# python main_ucla.py recognition -c config/st_gcn/ucla/train_231_skeleton_bone_2.yaml
+work_dir: ../../data/st-gcn/ucla/skeleton_bone/231_agl70
+weights: ../../data/st-gcn/ucla/skeleton_bone/231/best_model.pt
+
+# feeder
+feeder: feeder.feeder.Feeder
+train_feeder_args:
+  random_choose: False
+  random_move: True
+  window_size: -1
+  centralization: False
+  if_bone: False
+  data_path: ../../data/NWestern_UCLA/231/train_data_bone.npy
+  label_path: ../../data/NWestern_UCLA/231/train_label.pkl
+test_feeder_args:
+  centralization: False
+  if_bone: False
+  data_path: ../../data/NWestern_UCLA/231/val_data_bone.npy
+  label_path: ../../data/NWestern_UCLA/231/val_label.pkl
+
+# model
+#model: net.st_gcn_BK.Model
+model: net.st_gcn_BK.Model
+model_args:
+  in_channels: 3
+  num_class: 10
+  edge_importance_weighting: True
+  graph_args:
+    layout: 'ucla'
+    strategy: 'spatial'
+
+# training
+device: [0,1]
+batch_size: 64
+test_batch_size: 64
+
+#optim
+base_lr: 0.1
+step: [10, 50]
+num_epoch: 80

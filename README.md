@@ -204,5 +204,3 @@ Thanks to the original authors for their work!
 
 ## Contact
 For any question, feel free to contact Bruce Yu: ```b r u c e y o 2011 AT gmail.com(remove space)```
-
-# MMNet

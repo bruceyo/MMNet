@@ -1,0 +1,37 @@
+# python main_rgb_fused.py recognition -c config/pku_xview/test_rgb_fused.yaml
+work_dir: ../../data/st-gcn/xview/with_rgb/rgb_tp15_tf5_
+weights: models/pku/xview/rgb_fused_model.pt
+
+skeleton_joints_pkl: results/pku/xview/joint_result_msg3d.pkl
+skeleton_bones_pkl: results/pku/xview/bone_result_msg3d.pkl
+
+# feeder
+feeder: feeder.feeder_rgb_fused_pku.Feeder
+test_feeder_args:
+  debug: False
+  centralization: False
+  evaluation: True
+  temporal_rgb_frames: 5
+  data_path: /media/bruce/2Tssd/data/pku_st_gcn/xview/val_data.npy
+  label_path: /media/bruce/2Tssd/data/pku_st_gcn/xview/val_label.pkl
+
+# model
+model: net.mmn.Model
+model_args:
+  in_channels: 3
+  num_class: 51
+  dropout: 0.5
+  edge_importance_weighting: True
+  graph_args:
+    layout: 'ntu-rgb+d'
+    strategy: 'spatial'
+
+# test
+phase: test
+temporal_positions: 15
+fix_weights: True
+joint_weights: models/pku/xview/joint_model_stgcn.pt
+device: [0,1,2,3]
+
+# debug
+debug: False

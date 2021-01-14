@@ -1,0 +1,35 @@
+# python main_rgb_fused.py recognition -c config/nucla_231/test_rgb_fused.yaml
+work_dir: ../../data/st-gcn_nucla/231/with_rgb/rgb_tp15_tf5_
+weights: models/nucla/231/rgb_fused_model.pt
+
+skeleton_joints_pkl: results/nucla/231/joint_result_msg3d.pkl
+skeleton_bones_pkl: results/nucla/231/bone_result_msg3d.pkl
+
+# feeder
+feeder: feeder.feeder_rgb_fused_nucla.Feeder
+test_feeder_args:
+  centralization: False
+  temporal_rgb_frames: 5
+  data_path: ../../data/NWestern_UCLA/231/val_data_joint.npy
+  label_path: ../../data/NWestern_UCLA/231/val_label.pkl
+
+# model
+model: net.mmn_nucla.Model
+model_args:
+  in_channels: 3
+  num_class: 10
+  dropout: 0.5
+  edge_importance_weighting: True
+  graph_args:
+    layout: 'ucla'
+    strategy: 'spatial'
+
+# test
+phase: test
+temporal_positions: 15
+fix_weights: True
+joint_weights: models/nucla/231/joint_model_stgcn.pt
+device: [0,1,2,3]
+
+# debug
+debug: False

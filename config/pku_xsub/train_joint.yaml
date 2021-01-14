@@ -1,0 +1,37 @@
+# python main.py recognition -c config/st_gcn/pku_mmd_cs/train_skl.yaml
+work_dir: ../../data/st-gcn-pku/skl_cs_1
+
+# feeder
+feeder: feeder.feeder_skeleton.Feeder
+train_feeder_args:
+  debug: False
+  centralization: False
+  random_move: False
+  data_path: /media/bruce/2Tssd/data/pku_st_gcn/xsub/train_data.npy
+  label_path: /media/bruce/2Tssd/data/pku_st_gcn/xsub/train_label.pkl
+test_feeder_args:
+  centralization: False
+  data_path: /media/bruce/2Tssd/data/pku_st_gcn/xsub/val_data.npy
+  label_path: /media/bruce/2Tssd/data/pku_st_gcn/xsub/val_label.pkl
+
+# model
+model: net.gcn.Model
+model_args:
+  in_channels: 3
+  num_class: 51
+  dropout: 0.5
+  edge_importance_weighting: True
+  graph_args:
+    layout: 'ntu-rgb+d'
+    strategy: 'spatial'
+
+#optim
+weight_decay: 0.0001
+base_lr: 0.1
+step: [10, 50]
+
+# training
+device: [0,1,2,3]
+batch_size: 64
+test_batch_size: 64
+num_epoch: 80

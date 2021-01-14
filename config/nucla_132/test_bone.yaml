@@ -1,0 +1,31 @@
+# python main.py recognition -c config/st_gcn/ntu-132/test.yaml
+
+work_dir: ../../data/st-gcn/ucla/skeleton/132_bone_
+weights: models/nucla/132/bone_model_stgcn.pt
+
+# feeder
+feeder: feeder.feeder_skeleton.Feeder
+test_feeder_args:
+  centralization: False
+  if_bone: False
+  data_path: ../../data/NWestern_UCLA/132/val_data_bone.npy
+  label_path: ../../data/NWestern_UCLA/132/val_label.pkl
+
+# model
+model: net.gcn.Model
+model_args:
+  in_channels: 3
+  num_class: 10
+  #dropout: 0.5
+  edge_importance_weighting: True
+  graph_args:
+    layout: 'ucla'
+    strategy: 'spatial'
+
+# test
+phase: test
+device: [0,1,2,3]
+test_batch_size: 64
+
+# save
+save_result: True
