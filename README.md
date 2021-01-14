@@ -39,9 +39,9 @@ Download pretrained models from [GoogleDrive](https://drive.google.com/drive/fol
 ### Datasets
 #### NTU RGB+D 60
 NTU RGB+D can be downloaded from [their website](http://rose1.ntu.edu.sg/datasets/actionrecognition.asp).
-The **3D skeletons**(5.8GB) modality and the RGB modality are required in our experiments. After that, this command should be used to build the database for training or evaluation:
+The **3D skeletons**(5.75GB) modality and the RGB modality are required in our experiments. After that, this command should be used to build the database for training or evaluation:
 ```
-python tools/ntu_gendata.py --data_path <path to nturgbd+d_skeletons>
+python tools/ntu60_gendata.py --data_path <path to nturgbd+d_skeletons>
 ```
 where the ```<path to nturgbd+d_skeletons>``` points to the 3D skeletons modality of NTU RGB+D dataset you download.
 
@@ -49,9 +49,9 @@ For evaluation, the processed data includes: ```val_data and val_label``` are av
 
 #### NTU RGB+D 120
 NTU RGB+D 120 can be downloaded from [their website](http://rose1.ntu.edu.sg/datasets/actionrecognition.asp).
-The **3D skeletons**(5.8GB) modality and the RGB modality are required in our experiments. After that, this command should be used to build the database for training or evaluation:
+The **3D skeletons**(4.45GB) modality and the RGB modality are required in our experiments. After that, this command should be used to build the database for training or evaluation:
 ```
-python tools/ntu_gendata.py --data_path <path to nturgbd+d_skeletons>
+python tools/ntu120_gendata.py --data_path <path to nturgbd+d_skeletons>
 ```
 where the ```<path to nturgbd+d_skeletons>``` points to the 3D skeletons modality of NTU RGB+D dataset you download.
 
