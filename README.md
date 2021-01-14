@@ -101,6 +101,9 @@ The processed ROI of PKU-MMD is available from [GoogleDrive](https://drive.googl
 ## Testing Pretrained Models
 <!-- ### Evaluation
 Once datasets and the pretrained models are ready, we can start the evaluation. -->
+You may downliad the trained models reported in the paper via [GoogleDrive]() and put them in folder ```models```.
+And also downliad the results reported in the paper via [GoogleDrive]() and put them in folder ```results```.
+
 ### Evaluate on NTU RGB+D 60
 For evaluation in **NTU RGB+D 60**, run
 ```
