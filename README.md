@@ -1,5 +1,5 @@
 # MMNet
-This repository holds the codebase, dataset and models for the paper:
+This repository holds the codebase, dataset and models for the work:
 
 **MMNet: A Model-based Multimodal Network for Human Action Recognition in RGB-D Videos**
 
