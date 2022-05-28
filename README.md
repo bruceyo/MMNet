@@ -2,6 +2,7 @@
 This repository holds the codebase, dataset and models for the work:
 
 **MMNet: A Model-based Multimodal Network for Human Action Recognition in RGB-D Videos**
+Bruce X.B. Yu, Yan Liu, Xiang Zhang, Sheng-hua Zhong, Keith C.C. Chan, TPAMI 2022 ([PDF](https://github.com/bruceyo/MMNet/raw/main/resource/info/TPAMI_MMNet.pdf))
 
 <div align="center">
     <img src="resource/info/MMNet.png">
@@ -205,6 +206,26 @@ and
 - [MS-G3D](https://github.com/kenziyuliu/MS-G3D)
 
 Thanks to the original authors for their work!
+
+## Citation
+If you find this work is helpful, please cite our work:
+```
+@ARTICLE {9782511,
+author = {B. B. Yu and Y. Liu and X. Zhang and S. Zhong and K. C. Chan},
+journal = {IEEE Transactions on Pattern Analysis & Machine Intelligence},
+title = {MMNet: A Model-based Multimodal Network for Human Action Recognition in RGB-D Videos},
+year = {5555},
+volume = {},
+number = {01},
+issn = {1939-3539},
+pages = {1-1},
+keywords = {skeleton;videos;data models;computational modeling;hidden markov models;writing;solid modeling},
+doi = {10.1109/TPAMI.2022.3177813},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+month = {may}
+}
+```
 
 ## Contact
 For any question, feel free to contact Bruce Yu: ```b r u c e x b y u AT gmail.com(remove space)```
