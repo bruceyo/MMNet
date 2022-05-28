@@ -210,21 +210,16 @@ Thanks to the original authors for their work!
 ## Citation
 If you find this work is helpful, please cite our work:
 ```
-@ARTICLE {9782511,
-author = {B. B. Yu and Y. Liu and X. Zhang and S. Zhong and K. C. Chan},
-journal = {IEEE Transactions on Pattern Analysis & Machine Intelligence},
-title = {MMNet: A Model-based Multimodal Network for Human Action Recognition in RGB-D Videos},
-year = {5555},
-volume = {},
-number = {01},
-issn = {1939-3539},
-pages = {1-1},
-keywords = {skeleton;videos;data models;computational modeling;hidden markov models;writing;solid modeling},
-doi = {10.1109/TPAMI.2022.3177813},
-publisher = {IEEE Computer Society},
-address = {Los Alamitos, CA, USA},
-month = {may}
-}
+@ARTICLE{9782511,
+  author={Yu, Bruce X.B. and Liu, Yan and Zhang, Xiang and Zhong, Sheng-hua and Chan, Keith C.C.},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+  title={MMNet: A Model-based Multimodal Network for Human Action Recognition in RGB-D Videos}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/TPAMI.2022.3177813}
+  }
 ```
 
 ## Contact
