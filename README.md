@@ -1,4 +1,10 @@
 # MMNet
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mmnet-a-model-based-multimodal-network-for/action-recognition-in-videos-on-ntu-rgbd)](https://paperswithcode.com/sota/action-recognition-in-videos-on-ntu-rgbd?p=mmnet-a-model-based-multimodal-network-for)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mmnet-a-model-based-multimodal-network-for/action-recognition-in-videos-on-ntu-rgbd-120)](https://paperswithcode.com/sota/action-recognition-in-videos-on-ntu-rgbd-120?p=mmnet-a-model-based-multimodal-network-for)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mmnet-a-model-based-multimodal-network-for/action-classification-on-toyota-smarthome)](https://paperswithcode.com/sota/action-classification-on-toyota-smarthome?p=mmnet-a-model-based-multimodal-network-for)
+
 This repository holds the codebase, dataset and models for the work:
 
 **MMNet: A Model-based Multimodal Network for Human Action Recognition in RGB-D Videos**
