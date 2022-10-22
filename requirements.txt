@@ -7,3 +7,5 @@ imageio
 scikit-video
 torch
 torchvision
+tqdm
+pillow

@@ -4,7 +4,7 @@ import sys
 
 # torchlight
 import torchlight
-from torchlight import import_class
+from torchlight.io import import_class
 
 if __name__ == '__main__':
 
