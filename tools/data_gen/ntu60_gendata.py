@@ -6,7 +6,7 @@ import argparse
 
 from tqdm import tqdm
 
-from data_gen.preprocess import pre_normalization
+from preprocess import pre_normalization
 
 
 # https://arxiv.org/pdf/1604.02808.pdf, Section 3.2
@@ -144,12 +144,13 @@ def gendata(data_path, out_path, ignored_sample_path=None, benchmark='xview', pa
     np.save('{}/{}_data_joint.npy'.format(out_path, part), fp)
 
 
+# ignored path 수정함.
+# 경로 수정 필요.
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='NTU-RGB-D Data Converter.')
-    parser.add_argument('--data_path', default='/mnt/nas/ntu-rgbd/NTU/3d_skeletons/nturgb+d_skeletons/')
-    parser.add_argument('--ignored_sample_path',
-                        default='./data/nturgbd_raw/NTU_RGBD_samples_with_missing_skeletons.txt')
-    parser.add_argument('--out_folder', default='/media/bruce/2Tssd1/data/ntu/')
+    parser.add_argument('--data_path', default='/home/irteam/dcloud-global-dir/NIAMoCap/Data/NTU_MoCap_120/NTU_RGB+D_-_3D_Skeletons_5.8G/nturgb+d_skeletons/')
+    parser.add_argument('--ignored_sample_path', default='/home/zio/mocap/MMNet/resource/NTU-RGB-D/samples_with_missing_skeletons.txt')
+    parser.add_argument('--out_folder', default='/home/irteam/dcloud-global-dir/NIAMoCap/Data/MMNet/ntu60_skeletons_preprocessed')
 
     benchmark = ['xsub', 'xview']
     part = ['train', 'val']
