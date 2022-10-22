@@ -38,10 +38,6 @@ Human action recognition (HAR) in RGB-D videos has been widely investigated sinc
 cd torchlight; python setup.py install; cd ..
 ```
 
-## Get pretrained models
-
-Download pretrained models from [GoogleDrive](https://drive.google.com/drive/folders/1J63NA-L8v6FofNip4MMt3Zfi_S-FALt2?usp=sharing), and manually put them into ```./trained_models```.
-
 ## Data Preparation
 ### Datasets
 #### NTU RGB+D 60
@@ -108,8 +104,8 @@ The processed ROI of PKU-MMD is available from [GoogleDrive](https://drive.googl
 ## Testing Pretrained Models
 <!-- ### Evaluation
 Once datasets and the pretrained models are ready, we can start the evaluation. -->
-You may downliad the trained models reported in the paper via [GoogleDrive](https://drive.google.com/drive/folders/1DS_B7hj2QFLoI2l3--K-cRMX9YyTbIfu?usp=sharing) and put them in folder ```models```.
-And also downliad the results reported in the paper via [GoogleDrive](https://drive.google.com/drive/folders/1_4T4XhCGu7qVx8EqIcXhSAm-y2lr5F14?usp=sharing) and put them in folder ```results```.
+You may download the trained models reported in the paper via [GoogleDrive](https://drive.google.com/drive/folders/1DS_B7hj2QFLoI2l3--K-cRMX9YyTbIfu?usp=sharing) and put them in folder ```models```.
+And also download the results reported in the paper via [GoogleDrive](https://drive.google.com/drive/folders/1_4T4XhCGu7qVx8EqIcXhSAm-y2lr5F14?usp=sharing) and put them in folder ```results```.
 
 
 ### Evaluate on NTU RGB+D 60
