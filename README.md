@@ -2,9 +2,9 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mmnet-a-model-based-multimodal-network-for/action-recognition-in-videos-on-ntu-rgbd)](https://paperswithcode.com/sota/action-recognition-in-videos-on-ntu-rgbd?p=mmnet-a-model-based-multimodal-network-for)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mmnet-a-model-based-multimodal-network-for/action-recognition-in-videos-on-ntu-rgbd-120)](https://paperswithcode.com/sota/action-recognition-in-videos-on-ntu-rgbd-120?p=mmnet-a-model-based-multimodal-network-for)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mmnet-a-model-based-multimodal-network-for/action-classification-on-toyota-smarthome)](https://paperswithcode.com/sota/action-classification-on-toyota-smarthome?p=mmnet-a-model-based-multimodal-network-for)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mmnet-a-model-based-multimodal-network-for/action-classification-on-toyota-smarthome)](https://paperswithcode.com/sota/action-classification-on-toyota-smarthome?p=mmnet-a-model-based-multimodal-network-for)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mmnet-a-model-based-multimodal-network-for/skeleton-based-action-recognition-on-n-ucla)](https://paperswithcode.com/sota/skeleton-based-action-recognition-on-n-ucla?p=mmnet-a-model-based-multimodal-network-for)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mmnet-a-model-based-multimodal-network-for/action-recognition-in-videos-on-pku-mmd)](https://paperswithcode.com/sota/action-recognition-in-videos-on-pku-mmd?p=mmnet-a-model-based-multimodal-network-for)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mmnet-a-model-based-multimodal-network-for/action-classification-on-toyota-smarthome)](https://paperswithcode.com/sota/action-classification-on-toyota-smarthome?p=mmnet-a-model-based-multimodal-network-for)
 
 This repository holds the codebase, dataset and models for the work:
 
