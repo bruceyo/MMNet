@@ -1,5 +1,6 @@
-# python main.py recognition -c config/st_gcn/ntu-xsub/train.yaml
-work_dir: ../../data/st-gcn/xsub/joint/joint_1
+## 실행 명령어: python main_skeleton.py recognition -c config/ntu60_xsub/train_joint.yaml
+
+work_dir: /home/zio/data/dtaas/final  # training model 저장 경로(log 파일도 함께 저장)
 
 # feeder
 feeder: feeder.feeder_skeleton.Feeder
@@ -7,21 +8,21 @@ train_feeder_args:
   centralization: False
   random_move: False
   if_bone: False
-  data_path: /media/bruce/2Tssd/data/ntu/xsub/train_data_joint.npy
-  label_path: /media/bruce/2Tssd/data/ntu/xsub/train_label.pkl
+  data_path: /home/zio/mocap/preprocessed_final/xsub/train_data_joint.npy  # training dataset 경로
+  label_path: /home/zio/mocap/preprocessed_final/xsub/train_label.pkl
 test_feeder_args:
   centralization: False
   if_bone: False
-  data_path: /media/bruce/2Tssd/data/ntu/xsub/val_data_joint.npy
-  label_path: /media/bruce/2Tssd/data/ntu/xsub/val_label.pkl
+  data_path: /home/zio/mocap/preprocessed_final/xsub/val_data_joint.npy    # test dataset 경로
+  label_path: /home/zio/mocap/preprocessed_final/xsub/val_label.pkl
 
 # model
 model: net.gcn.Model
 model_args:
   in_channels: 3
-  num_class: 60
+  num_class: 63   # dtaas action class 개수
   dropout: 0.5
-  edge_importance_weighting: True
+  edge_importance_weighting: False
   graph_args:
     layout: 'ntu-rgb+d'
     strategy: 'spatial'
@@ -31,8 +32,8 @@ weight_decay: 0.0001
 base_lr: 0.1
 step: [10, 50]
 
-# training
-device: [0,1,2,3]
-batch_size: 64
-test_batch_size: 64
-num_epoch: 80
+# training - 본인의 GPU 환경에 맞게 수정 필요함.
+device: [0,1,2,3,4] # GPU number
+batch_size: 8
+test_batch_size: 8
+num_epoch: 21

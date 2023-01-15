@@ -1,3 +1,4 @@
+# python tools/data_gen/ntu60_gendata.py
 import sys
 sys.path.extend(['../'])
 
@@ -148,9 +149,9 @@ def gendata(data_path, out_path, ignored_sample_path=None, benchmark='xview', pa
 # 경로 수정 필요.
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='NTU-RGB-D Data Converter.')
-    parser.add_argument('--data_path', default='/home/irteam/dcloud-global-dir/NIAMoCap/Data/NTU_MoCap_120/NTU_RGB+D_-_3D_Skeletons_5.8G/nturgb+d_skeletons/')
-    parser.add_argument('--ignored_sample_path', default='/home/zio/mocap/MMNet/resource/NTU-RGB-D/samples_with_missing_skeletons.txt')
-    parser.add_argument('--out_folder', default='/home/irteam/dcloud-global-dir/NIAMoCap/Data/MMNet/ntu60_skeletons_preprocessed')
+    parser.add_argument('--data_path', default='/home/irteam/dcloud-global-dir/NIAMoCap/Data/Dtass_Sample/skeletons/')
+    parser.add_argument('--ignored_sample_path', default='/home/zio/mocap/MMNet_old/resource/NTU-RGB-D/samples_with_missing_skeletons.txt')
+    parser.add_argument('--out_folder', default='/home/irteam/dcloud-global-dir/NIAMoCap/Data/MMNet/Dtass_skeletons_preprocessed')
 
     benchmark = ['xsub', 'xview']
     part = ['train', 'val']

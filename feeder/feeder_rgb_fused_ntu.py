@@ -66,7 +66,7 @@ class Feeder(torch.utils.data.Dataset):
         #self.rgb_path = '/mnt/nas/ntu-rgbd/NTU/RGB_videos/rgb_frames/'
         #self.rgb_path = '/mnt/nas/ntu-rgbd/NTU/RGB_videos/rgb_frames_all_rmbg/'
         self.rgb_path_ntu120 = '/media/bruce/2Tssd/data/ntu120/ntu_rgb_frames_crop/fivefs/'
-        self.rgb_path_ntu60 = '/media/bruce/2Tssd/data/ntu_rgb_frames_crop/fivefs/'
+        self.rgb_path_ntu60 = '/home/irteam/dcloud-global-dir/NIAMoCap/Data/MMNet/NTU_RGB_Modality_Preprocessed/fivefs/'
 
         self.load_data(mmap)
         self.transform = transforms.Compose([
@@ -128,7 +128,7 @@ class Feeder(torch.utils.data.Dataset):
         filename = self.sample_name[index][sample_name_length-29:sample_name_length-9]
         action_id = int(
             filename[filename.find('A') + 1:filename.find('A') + 4])
-        if True or self.random_interval:
+        if not self.evaluation: #if not self.evaluation: or if True or self.random_interval:
             rgb = rgb_roi.construct_st_roi(filename, self.evaluation, self.random_interval,self.random_roi_move,self.random_flip, self.temporal_rgb_frames)
         else:
             rgb = filename + '.png'

@@ -79,13 +79,16 @@ class REC_Processor(Processor):
         #self.epoch_info['top {}'.format(k)] = '{:.2f}'.format(100 * accuracy)
         if k==1:
             self.progress_info[int(self.meta_info['epoch']/self.arg.eval_interval), 2]  =  100 * accuracy
+            if phase=='eval':   # 모든 eval에서 CM 출력하도록 수정함.
+                self.save_recall_precision(self.meta_info['epoch'])
             if accuracy > self.meta_info['best_t1'] and phase=='eval':
                 self.meta_info['best_t1'] = accuracy
                 self.meta_info['is_best'] = True
-                self.save_recall_precision(self.meta_info['epoch'])
+                # self.save_recall_precision(self.meta_info['epoch'])
         else:
             self.progress_info[int(self.meta_info['epoch']/self.arg.eval_interval), 3]  =  100 * accuracy
 
+# confusion matrix 생성
     def save_recall_precision(self, epoch): #original input: (label, score),score refers to self.result
         instance_num, class_num = self.result.shape
         rank = self.result.argsort()
@@ -98,26 +101,45 @@ class REC_Processor(Processor):
         #np.savetxt("confusion_matrix.csv", confusion_matrix, fmt='%.3e', delimiter=",")
         np.savetxt(os.path.join(self.arg.work_dir,'confusion_matrix_epoch_{}.csv').format(epoch+1), confusion_matrix, fmt='%d', delimiter=",")
 
-        precision = []
-        recall = []
+        tp = []
+        tn = []
+        fp = []
+        fn = []
+        acc = []
 
         for i in range(class_num):
             true_p = confusion_matrix[i][i]
             false_n = sum(confusion_matrix[i, :]) - true_p
             false_p = sum(confusion_matrix[:, i]) - true_p
+            true_n = confusion_matrix.sum() - (false_n + false_p + true_p)
+            accuracy = (true_p + true_n) * 1.0 / (true_p + true_n + false_n + false_p)
+            tp.append(true_p)
+            tn.append(true_n)
+            fp.append(false_p)
+            fn.append(false_n)
+            acc.append(accuracy)
+
             precision_ = true_p * 1.0 / (true_p + false_p)
             recall_ = true_p * 1.0 / (true_p + false_n)
-            if np.isnan(precision_):
-                precision_ = 0
-            if np.isnan(recall_):
-                recall_ = 0
-            precision.append(precision_)
-            recall.append(recall_)
-        recall = np.asarray(recall)
-        precision = np.asarray(precision)
+            # if np.isnan(precision_):
+            #     precision_ = 0
+            # if np.isnan(recall_):
+            #     recall_ = 0
+            # precision.append(precision_)
+            # recall.append(recall_)
+            
+
+        # recall = np.asarray(recall)
+        # precision = np.asarray(precision)
+        tp = np.asarray(tp)
+        tn = np.asarray(tn)
+        fp = np.asarray(fp)
+        fn = np.asarray(fn)
+        acc = np.asarray(acc)
+
         labels = np.asarray(range(1,class_num+1))
-        res = np.column_stack([labels.T, recall.T, precision.T])
-        np.savetxt(os.path.join(self.arg.work_dir,'recall_precision_epoch_{}.csv'.format(epoch+1)), res, fmt='%.4e', delimiter=",", header="Label,  Recall,  Precision")
+        res = np.column_stack([labels.T, tp.T, tn.T, fp.T, fn.T, acc.T])
+        np.savetxt(os.path.join(self.arg.work_dir,'metrics_from_CM_epoch_{}.csv'.format(epoch+1)), res, fmt='%.4e', delimiter=",", header="   Label,      TP,      TN,      FP,      FN,     ACC")
 
 
     def train(self):
@@ -187,7 +209,7 @@ class REC_Processor(Processor):
                 loss = self.loss(output, label)
                 loss_value.append(loss.item())
                 label_frag.append(label.data.cpu().numpy())
-
+        print("result_frag", result_frag)
         self.result = np.concatenate(result_frag)
         if evaluation:
             self.label = np.concatenate(label_frag)

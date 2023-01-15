@@ -1,3 +1,5 @@
+# sudo python tools/data_gen/gen_bone_data.py --dataset ntu
+
 import os
 import argparse
 import numpy as np
@@ -43,13 +45,17 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     for benchmark in benchmarks[args.dataset]:
+        if 'ntu/xview' == benchmark:
+            continue
         for part in parts:
             print(benchmark, part)
             try:
-                data = np.load('/media/bruce/2Tssd/data/{}/{}_data_joint.npy'.format(benchmark, part), mmap_mode='r')
+                #data = np.load('/media/bruce/2Tssd/data/{}/{}_data_joint.npy'.format(benchmark, part), mmap_mode='r')
+                data = np.load('/home/irteam/dcloud-global-dir/NIAMoCap/Data/MMNet/230106_Final/xsub/{}_data_joint.npy'.format(part), mmap_mode='r')
                 N, C, T, V, M = data.shape
                 fp_sp = open_memmap(
-                    '/media/bruce/2Tssd/data/{}/{}_data_bone.npy'.format(benchmark, part),
+                    #'/media/bruce/2Tssd/data/{}/{}_data_bone.npy'.format(benchmark, part),
+                    '/home/irteam/dcloud-global-dir/NIAMoCap/Data/MMNet/230106_Final/xsub/{}_data_bone.npy'.format(part),
                     dtype='float32',
                     mode='w+',
                     shape=(N, 3, T, V, M))

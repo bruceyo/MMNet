@@ -1,5 +1,5 @@
 # python main_rgb_fused.py recognition -c config/ntu60_xsub/train_rgb_fused.yaml
-work_dir: ../../data/st-gcn/xsub/with_rgb/rgb_tp15_tf5_
+work_dir: /home/zio/data/dtaas/221220/with_rgb/rgb_tp15_tf5_
 
 skeleton_joints_pkl: results/ntu60/xsub/joint_result_msg3d.pkl
 skeleton_bones_pkl: results/ntu60/xsub/bone_result_msg3d.pkl
@@ -15,15 +15,15 @@ train_feeder_args:
   random_flip: False
   random_interval: True
   temporal_rgb_frames: 5
-  data_path: /media/bruce/2Tssd/data/ntu/xsub/train_data_joint.npy
-  label_path: /media/bruce/2Tssd/data/ntu/xsub/train_label.pkl
+  data_path: /home/irteam/dcloud-global-dir/NIAMoCap/Data/MMNet/221217_skeletons_preprocessed/xsub/train_data_joint.npy
+  label_path: /home/irteam/dcloud-global-dir/NIAMoCap/Data/MMNet/221217_skeletons_preprocessed/xsub/train_label.pkl
 test_feeder_args:
   debug: False
   centralization: False
   evaluation: True
   temporal_rgb_frames: 5
-  data_path: /media/bruce/2Tssd/data/ntu/xsub/val_data_joint.npy
-  label_path: /media/bruce/2Tssd/data/ntu/xsub/val_label.pkl
+  data_path: /home/irteam/dcloud-global-dir/NIAMoCap/Data/MMNet/221220_skeletons_preprocessed_tmp/xsub/val_data_joint.npy
+  label_path: /home/irteam/dcloud-global-dir/NIAMoCap/Data/MMNet/221220_skeletons_preprocessed_tmp/xsub/val_label.pkl
 
 # model
 model: net.mmn.Model
@@ -40,13 +40,13 @@ model_args:
 temporal_positions: 15
 fix_weights: True
 joint_weights: models/ntu60/xsub/joint_model_stgcn.pt
-device: [0,1,2,3]
+device: [0,1,2,3,4]
 weight_decay: 0.0001
 base_lr: 0.1
 step: [10, 50]
-batch_size: 64
-test_batch_size: 64
-num_epoch: 80
+batch_size: 8
+test_batch_size: 8
+num_epoch: 21
 
 # debug
 debug: False

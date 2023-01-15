@@ -110,10 +110,10 @@ class Model(nn.Module):
         feature = x.view(N, M, c, t, v).permute(0, 2, 3, 4, 1)
 
         # prediction
-        x = self.fcn(x)
+        #x = self.fcn(x)    #수정
         output = x.view(N, M, -1, t, v).permute(0, 2, 3, 4, 1)
 
-        return output, feature
+        return feature #수정 
 
 class st_gcn(nn.Module):
     r"""Applies a spatial temporal graph convolution over an input graph sequence.

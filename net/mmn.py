@@ -42,7 +42,7 @@ class Model(nn.Module):
     def forward(self, x_, x_rgb):
     #def forward(self, x_rgb):
 
-        predict, feature = self.stgcn.extract_feature(x_)
+        feature = self.stgcn.extract_feature(x_)    #수정
         intensity_s = (feature*feature).sum(dim=1)**0.5
 
         intensity_s = intensity_s.cpu().detach().numpy()
