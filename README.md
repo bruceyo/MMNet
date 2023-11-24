@@ -8,8 +8,9 @@
 
 This repository holds the codebase, dataset and models for the work:
 
-**MMNet: A Model-based Multimodal Network for Human Action Recognition in RGB-D Videos**
-Bruce X.B. Yu, Yan Liu, Xiang Zhang, Sheng-hua Zhong, Keith C.C. Chan, TPAMI 2022 ([PDF](https://ieeexplore.ieee.org/document/9782511))
+**MMNet: A Model-based Multimodal Network for Human Action Recognition in RGB-D Videos** T-PAMI 2022 ([PDF](https://ieeexplore.ieee.org/document/9782511))
+
+[Bruce X.B. Yu](https://bruceyo.github.io/), [Yan Liu](https://web.comp.polyu.edu.hk/csyliu/), [Xiang Zhang](https://scholar.google.com/citations?user=vIeNb3YAAAAJ&hl=en), [Sheng-hua Zhong](https://scholar.google.com/citations?user=O6XQ9c4AAAAJ&hl=en), [Keith C.C. Chan](https://scholar.google.com.hk/citations?user=QboxUKcAAAAJ&hl=en)
 
 <div align="center">
     <img src="resource/info/MMNet.png">
@@ -17,10 +18,10 @@ Bruce X.B. Yu, Yan Liu, Xiang Zhang, Sheng-hua Zhong, Keith C.C. Chan, TPAMI 202
 
 ## Abstract
 <!--
-This repository holds the codebase, dataset and models for the paper:
+This repository holds the codebase, dataset, and models for the paper:
 **Multimodal Fusion via Teacher-Student Network for Indoor Action Recognition**
 
-update github version with below commands:
+update github version with the below commands:
   git add .
   git add commit
   git push git@github.com:bruceyo/TSMF.git
@@ -62,7 +63,7 @@ where the ```<path to nturgbd+d_skeletons>``` points to the 3D skeletons modalit
 Since the processed data is quite large (around 82G in total), we do not provide it here.
 
 #### PKU-MMD
-The dataset can be found in [PKU-MMD](https://github.com/ECHO960/PKU-MMD). PKU-MMD is a large action recognition dataset that contains 1076 long video sequences in 51 action categories, performed by 66 subjects in three camera views. It contains almost 20,000 action instances and 5.4 million frames in total. We transfer the 3D skeleton modality to seperate action repetition files with the command:
+The dataset can be found in [PKU-MMD](https://github.com/ECHO960/PKU-MMD). PKU-MMD is a large action recognition dataset that contains 1076 long video sequences in 51 action categories, performed by 66 subjects in three camera views. It contains almost 20,000 action instances and 5.4 million frames in total. We transfer the 3D skeleton modality to separate action repetition files with the command:
 ```
 python tools/utils/skeleton_to_ntu_format.py
 ```
@@ -80,9 +81,10 @@ The Multiview 3D event dataset is capture by [Wangjian](http://wangjiangb.github
 The dataset can be found in [part-1](http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-aa), [part-2](http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ab), [part-3](http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ac), [part-4](http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ad), [part-5](http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ae), [part-6](http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-af), [part-7](http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ag), [part-8](http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ah), [part-9](http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ai), [part-10](http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-aj), [part-11](http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ak), [part-12](http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-al), [part-13](http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-am), [part-14](http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-an), [part-15](http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ao), [part-16](http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ap).
 
 RGB videos could be downloaded from:  [RGB videos](http://users.eecs.northwestern.edu/~jwa368/data/multiview_action_videos.tgz), which is used to generate 2D skeleton data by using OpenPose.
+The reformated skeleton data (multiview_action_skeleton) for data preparation ([ucla_gendata.py](https://github.com/bruceyo/MMNet/blob/main/tools/data_gen/ucla_gendata.py)) is available via [Google Drive](https://drive.google.com/file/d/1KzUjmARLW3xTO7hESTMTBemQmQByX51h/view?usp=sharing).
 
 ### 2D Skeleton Retrieval from the RGB Video Input
-After installed the Openpose tool, run
+After installing the Openpose tool, run
 ```
 su
 sh tools/openpose_skeleton_retrieval/2D_Retrieve_<dataset>.sh
@@ -116,7 +118,7 @@ python main_rgb_fused.py recognition -c config/ntu60_<evaluation protocol>/<eval
 ```
 where ```<evaluation protocol>``` is the evaluation protocol e.g., ```xsub``` and ```xview```.
 
-Check the emsemble:
+Check the ensemble:
 ```
 python ./ensemble/ensemble_ntu60.py --protocol <evaluation protocol>
 ```
@@ -211,7 +213,7 @@ and
 Thanks to the original authors for their work!
 
 ## Citation
-If you find this work is helpful, please cite our work:
+If you find this work helpful, please cite our work:
 ```
 @ARTICLE{9782511,
   author={Yu, Bruce X.B. and Liu, Yan and Zhang, Xiang and Zhong, Sheng-hua and Chan, Keith C.C.},
