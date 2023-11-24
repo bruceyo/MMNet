@@ -6,9 +6,9 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mmnet-a-model-based-multimodal-network-for/action-recognition-in-videos-on-pku-mmd)](https://paperswithcode.com/sota/action-recognition-in-videos-on-pku-mmd?p=mmnet-a-model-based-multimodal-network-for)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mmnet-a-model-based-multimodal-network-for/action-classification-on-toyota-smarthome)](https://paperswithcode.com/sota/action-classification-on-toyota-smarthome?p=mmnet-a-model-based-multimodal-network-for)
 
-This repository holds the codebase, dataset and models for the work:
+This repository holds the codebase, dataset and models for the **T-PAMI 2022** work:
 
-**MMNet: A Model-based Multimodal Network for Human Action Recognition in RGB-D Videos** T-PAMI 2022 ([PDF](https://ieeexplore.ieee.org/document/9782511))
+**[MMNet: A Model-based Multimodal Network for Human Action Recognition in RGB-D Videos](https://ieeexplore.ieee.org/document/9782511)**
 
 [Bruce X.B. Yu](https://bruceyo.github.io/), [Yan Liu](https://web.comp.polyu.edu.hk/csyliu/), [Xiang Zhang](https://scholar.google.com/citations?user=vIeNb3YAAAAJ&hl=en), [Sheng-hua Zhong](https://scholar.google.com/citations?user=O6XQ9c4AAAAJ&hl=en), [Keith C.C. Chan](https://scholar.google.com.hk/citations?user=QboxUKcAAAAJ&hl=en)
 
